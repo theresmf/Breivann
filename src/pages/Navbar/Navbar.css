@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  height: 5rem;
+  width: 100%;
+  background-color: #5e5e5e;
+}
+
+.navbar-elementsOnRight {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  height: auto;
+}
+
+.navlink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 10em;
+  color: #fffbfb;
+  text-decoration: none;
+}

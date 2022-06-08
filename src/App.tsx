@@ -1,18 +1,28 @@
 import React from "react";
-import Auth from "./auth";
 import "./App.css";
+import Navbar from "./pages/Navbar/Navbar";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import Facilites from "./pages/Facilities";
+import Booking from "./pages/Booking";
+import Tours from "./pages/Tours";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <body>
+    <body>
+      <div className="App">
+        <header className="App-header"></header>
         <div className="app">
-          <h1>Page title</h1>
-          <Auth></Auth>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="tours" element={<Tours />} />
+            <Route path="facilities" element={<Facilites />} />
+            <Route path="/booking" element={<Booking />} />
+          </Routes>
         </div>
-      </body>
-    </div>
+      </div>
+    </body>
   );
 }
 
