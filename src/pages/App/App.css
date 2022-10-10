@@ -1,0 +1,21 @@
+html {
+  background: #2c5234 no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navigationElementsWrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.navigationElement {
+  height: 10rem;
+  width: 10rem;
+  background-color: #79947f;
+  text-align: center;
+  border-style: solid;
+  border-radius: 10%;
+  border-color: #f5d0a4;
+}

@@ -1,15 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import App from "./pages/App/App";
+import Overview from "./pages/Overview/Overview";
+import Register from "./pages/Register/Register";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<App />} />
+      <Route path="overview" element={<Overview />} />
+      <Route path="register" element={<Register />} />
+      <Route path="*" element={<h1>Not found</h1>} />
+    </>
+  )
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={routes} />
   </React.StrictMode>,
   document.getElementById("root")
 );
