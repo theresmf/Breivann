@@ -19,3 +19,9 @@ code {
 .navlink:visited {
   color: beige;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}

@@ -1,5 +1,5 @@
 html {
-  background: #2c5234 no-repeat center center fixed;
+  background: #f5d0a4 no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;
@@ -8,14 +8,20 @@ html {
 .navigationElementsWrapper {
   display: flex;
   gap: 50px;
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigationElement {
-  height: 10rem;
-  width: 10rem;
-  background-color: #79947f;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 20rem;
+  background-color: #f5d0a4;
   border-style: solid;
-  border-radius: 10%;
-  border-color: #f5d0a4;
+  border-radius: 50%;
+  border-color: #79947f;
 }
