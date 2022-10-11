@@ -1,26 +1,51 @@
+import { useEffect, useState } from "react";
+import { supabase } from "../../supabaseClient";
 import Page from "../Layout/Page";
 import "./Overview.css";
 
+type Post = {
+  description: string;
+  author: string;
+};
+
 function Overview() {
-  const data = [
-    {
-      description: "økjaødkghdfighøskdfhgøskdhgøkrdsg",
-      author: "Therese",
-    },
-    {
-      description: "LoremIpsiom og alt det der",
-      author: "marion",
-    },
-  ];
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<Post[]>([]);
+
+  console.log("data: ", data);
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const getPosts = async () => {
+    try {
+      setLoading(true);
+      let { data, error } = await supabase
+        .from("report")
+        .select("description, author")
+        .limit(5);
+
+      if (error) {
+        throw error;
+      }
+
+      if (data) {
+        setData(data);
+      }
+    } catch (error) {
+      alert(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Page>
       <h1>Oversikt</h1>
-      {data.map((d) => (
-        <Card
-          key={d.description}
-          description={d.description}
-          author={d.author}
-        />
+      {loading ? <>Henter </> : null}
+      {data.map((post) => (
+        <Card description={post.description} author={post.author} />
       ))}
     </Page>
   );
